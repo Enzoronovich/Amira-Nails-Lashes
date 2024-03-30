@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    
+     <title>AMIRANAILSANDLASHES</title>
+     <link rel="Style.css" href="Style.css">
+</head> 
+    <style>
+    
+        body {
+            background-color: pink; 
+        }
+        
+        
+    *{ 
+margin: 0;
+padding: 0;  
+font-family: sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.10)), url(pinky.jpg);
+    background-size: cover;
+    background-position: center;
+} /* background with navbar */
+
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 40 px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+} /* navbar */
+
+        .logo{
+            width: 10%;
+            cursor: pointer;
+        } /* logo size */
+              
+        .navbar ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 40px;
+            position: relative;
+        }
+    
+        .navbar ul li a{
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+        }
+        
+        .navbar ul li:after{
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.9s;
+        }   /* animation for hover */
+        
+        .navbar ul li:hover:after{
+            width: 100%;
+            
+        }
+
+        .card1 {
+            padding: 15px;
+            height: 1000px;
+            background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.40)), url(image.jpg);
+            background-size: cover;
+            background-position: center;
+        } /* 2nd page */
+        
+        .card2 {
+            height: 20px;
+            width: 100%;
+            background-color: palevioletred;
+            text-align: center;
+            color: aliceblue;
+        } /* divider */
+        
+        .card3 {
+             height: 90px;
+            width: 90px;
+            color: black;
+            position: center;
+        } /*  potential 3rd page */
+        
+        
+        .banner text {
+            
+            max-width: 360px;
+            
+        } /* banner text */
+      
+        
+        h1{
+            font-size: 78px;
+            font-family: fantasy;
+            padding-left: 20px ;
+            color: saddlebrown;
+            font-weight: 100;
+            text-align: left;
+        } /* h */
+        p {
+            
+            font-size: 35px;
+            font-family: cursive;
+            padding-left: 60px ;
+            padding-top: 70px;
+            text-align: justify-all;
+        } /* p */
+        
+        .header {
+  padding: 10px;
+  text-align: center;
+  background: pink;
+  color: white;
+  font-size: 20px;
+  height: 170px;
+} /* header */
+        
+        
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+} /*button for scroll up */
+
+        #myBtn:hover {
+  background-color: #555;
+} /* button hover color */
+ 
+        
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+        
+
+        
+    </style>
+    
+<body>
+    
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    
+    <div class="banner">
+        <div class="header">
+       <div class="navbar">
+          <img src="AMT.png" class="logo">
+         
+           <ul>
+               
+                <li><a href="#">Contact</a></li>
+                 <li><a href="#">faqs</a></li>
+                  <li><a href="#">register</a></li>
+                   <li><a href="#">Log-in</a></li>
+           </ul>
+           
+        </div>
+        </div>
+        
+        
+        
+        
+        <div class="banner text">
+        <h1>Welcome to Amira Nails and Lashes!</h1>
+            <p>In this website you can check out <br> the nails and lashes that you, yes, <br> YOU! <br> DESIRE.
+            <br> Here you can see the prices.
+            
+            </p>
+           
+            
+        </div>
+
+             <p class=""
+
+
+        
+        
+        
+    </div>
+    
+    
+
+    
+    
+    <div class="card1">
+        
+        
+
+    
+    
+    
+    </div>
+    
+
+<script>//for scroll up
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script> 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+</body>
+    
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>user_page</title>
+    
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 0px;
+  background: #d6bbd8;
+  margin: 0px;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: left;
+  background: white;
+  background-image: url(image.jpg);
+  background-size: cover;
+}
+
+.header h1 {
+  font-size: 50px;
+  color: #ff9300;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: lightpink;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  letter-spacing: 5px;
+  justify-content: space-between;  
+  transition: 0.4;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ff9300;
+  color: #ff00a7;
+ 
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 45%;
+  background-color: #fdb7d5;
+  padding-left: 0px;
+  margin: 5px;
+}
+
+.rightcolumn2 {
+  float: left;
+  width: 53.5%;
+  background-color: #fdb7d5;
+  padding-left: 5px;
+  margin: 5px;
+}
+        
+        
+        
+        .column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+        
+        
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0,0,0,0)), #d6bbd8;
+;
+  padding: 20px;
+  margin-top: 0px;
+}
+
+.card1 {
+  background-image: url(pinky.jpg);
+    background-size: cover;
+    background-position: center;
+  padding: 20px;
+  margin-top: 0px;
+}
+        
+        
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  background: #ebdae6;
+  margin-top: 20px;
+  height: 370px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+        
+.logo {
+        width: 150px;
+        position: absolute;
+        float: left;
+        }
+        
+        
+        /* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+        
+        
+        #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #ff9300;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+        }
+
+        
+        .card123 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.card123 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.card123 a:hover {
+  color: #f1f1f1;
+}
+
+.card123 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .card123 {padding-top: 15px;}
+  .card123 a {font-size: 18px;}
+}
+        
+        
+</style>
+    
+</head>
+    
+<body>
+    
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    
+    <div id="mycard" class="card123">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <h1 style=" font-size: 50px; font-family: fantasy; font-weight: 100; padding-left: 10px; color: pink; ">Faqs</h1> 
+  <p style="color: pink; font-size: 20px; font-family: fantasy; font-weight: 100; padding-left: 10px;">These are the most frequently asked question</p>
+  <p></p>
+  
+  
+  
+</div>
+    
+    <script>//for scroll up
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+    
+    <div class="header">
+  
+        <img src="AMT.png" class="logo">
+        <h1 style="padding-left: 165px; font-family: fantasy; font-weight: 100; word-spacing: 10px;"> AMIRA NAILS AND LASHES</h1>
+</div>
+
+
+
+
+<div class="topnav">
+  <a href="file:///C:/Users/Lorenzo%20Bravo/Desktop/THESIS/Form.html">book now</a>
+  <a href=""></a>
+  <a href="#"></a>
+  <a href="#" style="float:left"></a>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; FAQS</span>
+
+<script>
+function openNav() {
+  document.getElementById("mycard").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mycard").style.width = "0";
+}
+</script>
+</div>
+
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card1">
+      <h1 style="font-family: fantasy; font-weight: 300; color: #ff9300;">Book your appointment</h1>
+      <h2>Here you can see the available dates for booking!</h2>
+      <iframe src="https://calendar.google.com/calendar/embed?src=lyle.damien17%40gmail.com&ctz=Asia%2FManila" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+      <p>;p</p>
+      <p style="font-size: 20px; font-weight: 100; font-family: sans-serif;" >
+
+</p>
+        <marquee behavior="scroll" direction="right" scrollamount="89">🟥</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="70">🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;🟥&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  🟥&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="63">🟥</marquee>
+        <marquee behavior="scroll" direction="right" scrollamount="83">🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;🟥&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  🟥&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 🟥</marquee>
+    </div>
+    
+  </div>
+
+
+  <div class="rightcolumn">
+    <div class="card">
+      <h2 style="font-size: 100px; font-weight: 200; font-family: fantasy; padding-left: 140px; color: #ff9300; ">IMAGES</h2>
+      <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 10</div>
+  <img src="1.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 10</div>
+  <img src="2.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 10</div>
+  <img src="3.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+<div class="mySlides fade">
+  <div class="numbertext">4 / 10</div>
+  <img src="4.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+          
+<div class="mySlides fade">
+  <div class="numbertext">5 / 10</div>
+  <img src="5.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+          
+<div class="mySlides fade">
+  <div class="numbertext">6 / 10</div>
+  <img src="6.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+          
+<div class="mySlides fade">
+  <div class="numbertext">7 / 10</div>
+  <img src="7.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+        
+<div class="mySlides fade">
+  <div class="numbertext">8 / 10</div>
+  <img src="8.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+          
+<div class="mySlides fade">
+  <div class="numbertext">9 / 10</div>
+  <img src="9.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+          
+          
+<div class="mySlides fade">
+  <div class="numbertext">10 / 10</div>
+  <img src="10.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span> 
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+
+
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+      <p>Images of designs and styles of nails.</p>
+    </div>
+ 
+      
+
+      
+    
+    
+  </div>
+    
+    
+      <div class="rightcolumn2">
+       <div class="card">
+         
+            <div class="column-66">
+      <h1 class="xlarge-font" style="font-family: fantasy; font-weight: 100; font-size: 100px; color: #ff9300; letter-spacing: 6px;"><b>PRICE LIST</b></h1>
+      <h1 class="large-font" style="color: black; font-family: sans-serif; font-weight: 100;"><b>Why Amira nails and lashes?</b></h1>
+      <p><span style="font-size:36px">TOP QUALITY!</span> You should book an appointment and get your nails and lashes done here, for every service uses top quality nail and lashes products.<br>  </p>
+    </div>
+    <div class="column-33">
+        <img src="prices.jpg" width="325" height="467">
+    </div>
+      
+           <br> <br> <br>
+           
+    <div class="column-33">
+      <img src="lashesprice.jpg" alt="App" width="300" height="471">
+    </div>
+    <div class="column-66">
+      <h1 class="xlarge-font"><b>Clarity</b></h1>
+      <h1 class="large-font" style="color:red;"><b>REASONABLE PRICE!</b></h1>
+      <p><span style="font-size:24px">Here, we dont overcharge our services!!</span> Good nail and lashes treatments and products at a reasonable and cheap price</p>
+     
+    </div>       
+          
+             
+          </div>  
+      </div>
+   <div class="rightcolumn2">
+       <div class="card">
+           
+           <h1> LOCATION </h1>
+           
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.780052391892!2d120.96134117590422!3d14.6116017768056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca753782265b%3A0x24565579326e9c6!2s1361%20Sevilla%20Extension%2C%20Tondo%2C%20Manila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1710078719615!5m2!1sen!2sph" width="100%" height="325" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
+       </div>
+    </div>
+    
+    
+    
+</div>
+
+<div class="footer">
+  <h1 style="font-family: fantasy; font-size: 60px; font-weight: 100; ">CONTACTS</h1>
+    <p style="text-align: center; font-family: sans-serif; font-size: 40px;"> 0912-123-2123</p>
+     <center><a href="https://www.facebook.com/iloveluhan30"><img src="fbbbbb.png" alt="fb" style="width:100px;height:100px; "></a></center>
+</div>
+    
+</body>
+    
+    
+</html>
