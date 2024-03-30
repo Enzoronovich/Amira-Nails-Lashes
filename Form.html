@@ -110,43 +110,7 @@ a:hover, a:active {
     
 </style>
 
-   <script>
-        function sendEmail() {
-            var senderEmail = document.getElementById('senderEmail').value;
-            var recipientEmail = document.getElementById('recipientEmail').value;
-            var subject = document.getElementById('subject').value;
-            var body = document.getElementById('body').value;
-
-            var data = {
-                from: senderEmail,
-                to: recipientEmail,
-                subject: subject,
-                body: body
-            };
-
-            // Make API call to send email
-            fetch('https://api.your-email-service.com/send', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer md-XxA5WQmXZNpq727CfOBi8A'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to send email');
-                }
-                return response.json();
-            })
-            .then(data => {
-                alert('Email sent successfully!');
-            })
-            .catch(error => {
-                alert('Failed to send email: ' + error.message);
-            });
-        }
-    </script>
+  
   
 </head>
 <body>
