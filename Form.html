@@ -7,8 +7,13 @@
   box-sizing: border-box;
 }
 
-.body {
-        background-image: url(pinky.jpg);
+body {
+        background-image: url(2nVd.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+      padding: 0px;
+ text-align: center;
+  margin: 0px;
 
 }
 
@@ -57,9 +62,15 @@ input[type=submit]:hover {
     
     
 .container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
+  border-radius: 20px;
+  background-color: #fc93ab;
+  width: 80%;
+  padding-bottom: 5px;
+  margin: 20px;
   padding: 20px;
+  position: relative;
+  margin-left: 10%;
+
 }
 
 .col-25 {
@@ -89,14 +100,18 @@ input[type=submit]:hover {
   }
 }
     
-    
+        
    a:link, a:visited {
-  background-color: green;
+  background-color: #b7006a;
   color: white;
   padding: 14px 25px;
-  text-align: center;
+  text-align: left  ;
   text-decoration: none;
   display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 14px;
+ 
+
 }
 
 a:hover, a:active {
@@ -116,14 +131,18 @@ a:hover, a:active {
 <body>
 
 
-<p>Fill up the form and type down your date and type of service </p> <br>
+<h1>Fill up the form and type down your date and type of service </h1> <br>
 <p>Example : jan 2, 2024. Nail art. </p>
+    <p>Please type down your <br>full Name<br>correct Email<br>Correct phone number<br> and enter the date and type of service
+    <br> So we may contact you for confirmation.
+        <br> Type N/A in email if you dont have one.</p>
+    <h2>Phone number is a must</h2>
 
 <div class="container">
   <form method ="post" action="https://formsubmit.co/lyle.damien17@gmail.com">
     <div class="row">
       <div class="col-25">
-        <label for="name">First Name</label>
+        <label for="name">Name</label>
       </div>
       <div class="col-75">
           <input type="text" name="name" required placeholder="Your name..">
@@ -135,7 +154,7 @@ a:hover, a:active {
         <label for="Email">Email</label>
       </div>
       <div class="col-75">
-       <input type="email" name="email" required placeholder="Enter your Email..">
+       <input type="text" name="email" required placeholder="Enter your Email..">
       </div>
       </div>
       
@@ -143,13 +162,12 @@ a:hover, a:active {
       <div class="col-25">
         <label for="Contact">Contact number</label>
       </div>
-      <div class="col-75">
-        <input type="tel" id="Contact" name="Contactnumber" placeholder="Enter Contact Number..">
+      <div class="col-75" style="text-align: left">
+        <input type="contact" id="Contact" name="Contactnumber" placeholder="Enter Contact Number..">
       </div>
     </div>
     
-      </div>
-    </div>
+
     <div class="row">
       <div class="col-25">
         <label for="subject">Date and Type of service</label>
@@ -160,12 +178,14 @@ a:hover, a:active {
     </div>
     <div class="row">
       <input type="submit" value="Submit">
-        <a href="index.html" >Go Back</a>
         
         
     </div>
   </form>
+    
 </div>
+    
+     <a style="text-align: left" href="index.html" >Go Back</a>
 
 </body>
 </html>
