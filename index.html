@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="evo-calendar.min.css">
+<link rel="stylesheet" href="evo-calendar.orange-coral.min.css">
 <meta charset="utf-8">
     
 <title>user_page</title>
     
     <style>
+        
+        html {
+            scroll-behavior: smooth;
+        }
 * {
   box-sizing: border-box;
 }
@@ -46,9 +52,9 @@ body {
   font-weight: 200;
   padding: 14px 16px;
   text-decoration: none;
-  letter-spacing: 8px;
+  letter-spacing: 4px;
   justify-content: space-between;  
-  transition: 0.4;
+  transition: 1.2 ;
 }
 
 /* Change color on hover */
@@ -63,6 +69,7 @@ body {
 .leftcolumn {   
   float: left;
   width: 100%;
+  margin: 7px;
 }
 
 /* Right column */
@@ -71,15 +78,15 @@ body {
   width: 100%;
   background-color: #fdb7d5;
   padding-left: 0px;
-  margin: 5px;
+  margin: 7px;
 }
 
 .rightcolumn2 {
   float: left;
   width: 100%;
   background-color: #fdb7d5;
-  padding-left: 5px;
-  margin: 5px;
+  padding-left: 0px;
+  margin: 7px;
 }
         
         
@@ -298,18 +305,115 @@ body {
 }
 
 a:link, a:visited {
-  background-color: green;
+  background-color: #c93384;
   color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 20px;
 }
 
 a:hover, a:active {
   background-color: lime;
 } 
 
+        #DATES {
+            
+        margin-top: 0;
+        padding-bottom: 0;
+        }
+        
+        #About {
+            
+        margin-top: 0;
+        padding-bottom: 0;
+        }
+        
+        #imagess {
+            
+        margin-top: 0;
+        padding-bottom: 0;
+        }
+        
+        #price {
+            
+        margin-top: 0;
+        padding-bottom: 0;
+        }
+        
+        #location {
+            
+        margin-top: 0;
+        padding-bottom: 0;
+        }
+        
+        #faqs {
+            
+        margin-top: 0;
+        padding-bottom: 0;
+        }
+        
+       
+        #calendar{
+            width: 80%;
+            position: relative;
+          
+        }
+        
+        
+        
+        .accodrion {
+            margin: 15px auto;
+            width: 80%;
+        }
+        
+        .accordion li{
+            list-style: none;
+            width: 100%;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background: #e3edf7;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                       -6px -6px 10px -1px rgba(225, 225, 225, 0.15);
+        }
+        
+        .accordion li label {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        label::before{
+            content: '+';
+            margin-right: 10px;
+            font-size: 30px;
+            font-weight: 200;
+        }
+        
+        input[type="radio"]{
+            display: none;
+        }
+        
+        .accordion .content {
+            padding: 0 10px;
+            line-height: 16px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s, padding 0.8s;
+        }
+        
+        input[type="radio"]:checked + label + .content {
+            max-height: 400px;
+            padding: 10px 10px 20px; 
+        }
+        
+        
+        
         
 </style>
     
@@ -361,8 +465,14 @@ function topFunction() {
 
 
 <div class="topnav">
-  <a href="Form.html" style=" float:left">book now</a>
-
+  <a href="Form.html" style=" float:right">BOOK</a>
+  <a href="#DATES" style="float: left; border-radius: 0px ">DATES</a>
+  <a href="#About" style="float: left; border-radius: 0px">ABOUT US</a>
+  <a href="#imagess" style="float: left; border-radius: 0px">IMAGES</a>
+  <a href="#price" style="float: left; border-radius: 0px">PRICE</a>
+  <a href="#location" style="float: left; border-radius: 0px">LOCATION</a>
+  <a href="#faqs" style="float: left; border-radius: 0px">FAQS</a>
+  <a href="#faqs" style="float: left; border-radius: 0px">CONTACTS</a>
 </div>
 
 
@@ -370,36 +480,46 @@ function topFunction() {
     
 
 <div class="row">
+    
+    <div class="rightcolumn2">
+      <div id="About"></div>
+        <div class="card1">
+
+       <h1>About Us</h1>
+            <h2 style=" text-justify: auto "> Amira recently started this 2024, it was founded by Amira Hassanien Badawy, she started as a call center agent.<br>
+                Later on she entered the cosmetics business, her first experience as an esthetician at a side job and resigned afterx
+                having a few years experience to start her own nails and lashes shop/services and even today she is still on the business. <br>
+                "If you're looking for affordable Nails and Lashes, just head to Amira Nails and Lashes Accessories at<br> 1361 Sevilla Ext Tondo Manila Brgy 73 1012 Metro Manila.<br>
+                You'll find budget-friendly cosmetics there And if you need nails & lashes maintenance, it's also conveniently close to our location.
+                She provide fast and clean work, and you won't regret coming to her shop.” </h2>
+       
+        </div>
+    </div>
+    
+    
+    
+    
+    
   <div class="leftcolumn">
     <div class="card1">
+        <div id="DATES"></div>
       <h1 style="font-family: fantasy; font-weight: 300; color: #ff9300;">Book your appointment</h1>
       <h2>Here you can see the available dates for booking!</h2>
-      <iframe src="https://calendar.google.com/calendar/embed?src=lyle.damien17%40gmail.com&ctz=Asia%2FManila" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+        
+        <div id="calendar"></div>
+        
+        
       <h2>Click the Button to book now!</h2>
- <a href="Form.html" >BOOK NOW</a>
+ <a href="Form.html" >BOOK</a>
 
     </div>
     
   </div>
 
-  <div class="rightcolumn2">
-        <div class="card">
-
-       <h1>About Us</h1>
-            <p style=" text-justify: auto "> Amira recently started this 2024, it was founded by Amira Hassanien Badawy, she started as a call center agent.<br>
-                Later on she entered the cosmetics business, her first experience as an esthetician at a side job and resigned after<br>
-                having a few years experience to start her own nails and lashes shop/services and even today she is still on the business. <br>
-                "If you're looking for affordable Nails and Lashes, just head to Amira Nails and Lashes Accessories at 1361 Sevilla Ext Tondo Manila Brgy 73 1012 Metro Manila.<br>
-                You'll find budget-friendly cosmetics there And if you need nails & lashes maintenance, it's also conveniently close to our location.<br>
-                She provide fast and clean work, and you won't regret coming to her shop.” </p>
-       
-        </div>
-    </div>
-
-    
 
   <div class="rightcolumn">
     <div class="card">
+        <div id="imagess"></div>
       <h2 style="font-size: 100px; font-weight: 200; font-family: fantasy; padding-left: 140px; color: #ff9300; ">IMAGES</h2>
       <div class="slideshow-container">
 
@@ -531,6 +651,7 @@ function showSlides(n) {
     
       <div class="rightcolumn2">
        <div class="card">
+           <div id="price"></div>
          
             <div class="column-66">
       <h1 class="xlarge-font" style="font-family: fantasy; font-weight: 100; font-size: 100px; color: #ff9300; letter-spacing: 6px;"><b>PRICE LIST</b></h1>
@@ -550,7 +671,7 @@ function showSlides(n) {
       <h1 class="xlarge-font"><b>Clarity</b></h1>
       <h1 class="large-font" style="color:red;"><b>REASONABLE PRICE!</b></h1>
       <p><span style="font-size:24px">Here, we dont overcharge our services!!</span> Good nail and lashes treatments and products at a reasonable and cheap price</p>
-    <font size="100px"><a href="Form.html" style="text-decoration: none ; font-family:fantasy ">BOOK NOW!</a></font>
+    <font size="100px"><a href="Form.html" style="text-decoration: none ; font-family:fantasy ">BOOK!</a></font>
     </div>       
           
              
@@ -560,6 +681,7 @@ function showSlides(n) {
    
     
    <div class="rightcolumn2">
+       <div id="location"></div>
        <div class="card">
            
            <h1> LOCATION </h1>
@@ -572,20 +694,86 @@ function showSlides(n) {
 </div>
 
   <div class="rightcolumn2">
+      <div id="faqs"></div>
         <div class="card">
 
        <h1>FAQS</h1>
             <h3>here is our recently asked questions and their answers</h3>
+            <ul class="accordion">
+              <li>
+                <input type="radio" name="accordion" id="first" checked>
+                <label for="first">How long will the confirmation take?</label>
+                   <div class="content">
+                     <p>The confirmation of the booking should take less than a day, <br>
+                        so it's better to book in advance.</p>
+                   </div>
+              </li>
+                
+                <li>
+                <input type="radio" name="accordion" id="second">
+                <label for="second">Is the Quality Good? </label>
+                   <div class="content">
+                     <p>OFCOURSE! Amira nails and lashes uses quality materials,<br>
+                        not just som cheap ordinary materials</p>
+                   </div>
+              </li>
+                
+                <li>
+                <input type="radio" name="accordion" id="third">
+                <label for="third">What if the date i selected was fully booked?</label>
+                   <div class="content">
+                     <p>No worries!, if the date you entered is fully booked, we'll notify you and move you to a different date that will be available.</p>
+                   </div>
+              </li>
+            </ul>
        
+            
+            
+            
         </div>
     </div>
 
     
 <div class="footer">
+    
   <h1 style="font-family: fantasy; font-size: 60px; font-weight: 100; ">CONTACTS</h1>
     <p style="text-align: center; font-family: sans-serif; font-size: 40px;"> 0912-123-2123</p>
      <center><a href="https://www.facebook.com/iloveluhan30"><img src="fbbbbb.png" alt="fb" style="width:100px;height:100px; "></a></center>
 </div>
+    
+    
+    
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="evo-calendar.min.js"></script>
+
+        <script>    
+        // initialize your calendar, once the page's DOM is ready
+        $(document).ready(function() {
+            $('#calendar').evoCalendar({
+              theme: "Orange Coral",
+                
+                
+                calendarEvents:[{
+                    
+                  id: 'event1', // Event's id (required, for removing event)
+            name:"AVAILABLE",
+               description: "This date is available for booking", // Description of event (optional)
+               badge: "1-day event", // Event badge (optional)
+               date: "April/20/2024", // Date of event
+               type: "event", // Type of event (event|holiday|birthday)
+               color: "#63d867", // Event custom color (optional)
+               everyYear: false  // Event is every year (optional)
+                },
+                               
+                               
+                               
+                               ]
+                
+            })
+        })
+        </script>
+    
+    
     
 </body>
     
